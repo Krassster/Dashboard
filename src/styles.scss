@@ -29,6 +29,10 @@ h2.is-bold {
   letter-spacing: -2px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   max-width: 850px;
   margin: auto;
@@ -66,6 +70,7 @@ h2.is-bold {
 
 .btns-container {
   display: flex;
+  gap: 12px;
   margin-top: 20px;
 
   &.btns-centered {
@@ -82,6 +87,10 @@ h2.is-bold {
   backdrop-filter: blur(20px);
 }
 
+.form-field {
+  margin-bottom: 20px;
+}
+
 .textbox,
 .textarea {
   display: block;
@@ -95,7 +104,6 @@ h2.is-bold {
   background: rgba(white, 0.85);
   padding: 8px 10px;
 
-  margin-bottom: 20px;
   width: 100%;
 
   &:hover {
