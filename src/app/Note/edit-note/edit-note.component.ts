@@ -1,6 +1,6 @@
 import { NgForm } from '@angular/forms';
-import { Note } from './../shared/note.model';
-import { NoteService } from './../shared/note.service';
+import { Note } from '../../shared/note.model';
+import { NoteService } from '../../shared/note.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 

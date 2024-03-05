@@ -1,7 +1,7 @@
-import { NoteService } from './../shared/note.service';
+import { NoteService } from '../../shared/note.service';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Note } from '../shared/note.model';
+import { Note } from '../../shared/note.model';
 import { Router } from '@angular/router';
 
 @Component({

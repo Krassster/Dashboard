@@ -1,10 +1,12 @@
-import { EditNoteComponent } from './edit-note/edit-note.component';
-import { NotesComponent } from './notes/notes.component';
+import { EditTodoComponent } from './Todo/edit-todo/edit-todo.component';
+import { AddTodoComponent } from './Todo/add-todo/add-todo.component';
+import { EditNoteComponent } from './Note/edit-note/edit-note.component';
+import { NotesComponent } from './Note/notes/notes.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
-import { TodosComponent } from './todos/todos.component';
-import { AddNoteComponent } from './add-note/add-note.component';
+import { TodosComponent } from './Todo/todos/todos.component';
+import { AddNoteComponent } from './Note/add-note/add-note.component';
 
 const routes: Routes = [
   { path: 'bookmarks', component: BookmarksComponent, data: { tab: 1 } },
@@ -12,6 +14,8 @@ const routes: Routes = [
   { path: 'notes', component: NotesComponent, data: { tab: 3 } },
   { path: 'notes/add', component: AddNoteComponent },
   { path: 'notes/:id', component: EditNoteComponent },
+  { path: 'todos/add', component: AddTodoComponent },
+  { path: 'todos/:id', component: EditTodoComponent },
 ];
 
 @NgModule({

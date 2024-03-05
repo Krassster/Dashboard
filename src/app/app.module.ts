@@ -6,13 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { BookmarksComponent } from './bookmarks/bookmarks.component';
-import { TodosComponent } from './todos/todos.component';
-import { NotesComponent } from './notes/notes.component';
+import { TodosComponent } from './Todo/todos/todos.component';
+import { NotesComponent } from './Note/notes/notes.component';
 import { BookmarkTileComponent } from './bookmark-tile/bookmark-tile.component';
-import { AddNoteComponent } from './add-note/add-note.component';
-import { NoteCardComponent } from './note-card/note-card.component';
+import { AddNoteComponent } from './Note/add-note/add-note.component';
+import { NoteCardComponent } from './Note/note-card/note-card.component';
 import { FormsModule } from '@angular/forms';
-import { EditNoteComponent } from './edit-note/edit-note.component';
+import { EditNoteComponent } from './Note/edit-note/edit-note.component';
+import { AddTodoComponent } from './Todo/add-todo/add-todo.component';
+import { TodoCardComponent } from './Todo/todo-card/todo-card.component';
+import { EditTodoComponent } from './Todo/edit-todo/edit-todo.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { EditNoteComponent } from './edit-note/edit-note.component';
     AddNoteComponent,
     NoteCardComponent,
     EditNoteComponent,
+    AddTodoComponent,
+    TodoCardComponent,
+    EditTodoComponent,
   ],
   imports: [
     BrowserModule,
