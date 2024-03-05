@@ -8,11 +8,9 @@ import { NoteService } from '../../shared/note.service';
   styleUrls: ['./notes.component.scss'],
 })
 export class NotesComponent implements OnInit {
-  notes: Note[];
+  notes!: Note[];
 
-  constructor(private noteService: NoteService) {
-    this.notes = [];
-  }
+  constructor(private noteService: NoteService) {}
 
   ngOnInit(): void {
     this.notes = this.noteService.getNotes();

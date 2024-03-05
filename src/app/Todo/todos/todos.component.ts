@@ -24,11 +24,9 @@ import { animate, style, transition, trigger } from '@angular/animations';
   ],
 })
 export class TodosComponent implements OnInit {
-  todos: Todo[];
+  todos!: Todo[];
 
-  constructor(private todoService: TodoService, private router: Router) {
-    this.todos = [];
-  }
+  constructor(private todoService: TodoService, private router: Router) {}
 
   ngOnInit(): void {
     this.todos = this.todoService.getTodos();
