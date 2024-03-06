@@ -1,5 +1,5 @@
-import { BookmarkService } from './../shared/bookmark.service';
-import { Bookmark } from './../shared/bookmarks.model';
+import { BookmarkService } from '../../shared/bookmark.service';
+import { Bookmark } from '../../shared/bookmarks.model';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
