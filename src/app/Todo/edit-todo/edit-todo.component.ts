@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
+import { NotificationService } from 'src/app/shared/notification.service';
 import { Todo } from '../../shared/todo.model';
 import { TodoService } from '../../shared/todo.service';
 
@@ -15,7 +16,8 @@ export class EditTodoComponent {
   constructor(
     private route: ActivatedRoute,
     private todoService: TodoService,
-    private router: Router
+    private router: Router,
+    private notificationServive: NotificationService
   ) {
     this.showValidationErrors = false;
   }
@@ -37,6 +39,8 @@ export class EditTodoComponent {
     if (form.valid) {
       this.todoService.updateTodo(this.todo.id, form.value);
       this.router.navigateByUrl('/todos');
+
+      this.notificationServive.show('Todo edited!');
     } else {
       this.showValidationErrors = true;
     }

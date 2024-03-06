@@ -1,5 +1,6 @@
 import { Todo } from '../../shared/todo.model';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { NotificationService } from 'src/app/shared/notification.service';
 
 @Component({
   selector: 'app-todo-card',
@@ -13,7 +14,7 @@ export class TodoCardComponent {
   @Output() editClick: EventEmitter<void> = new EventEmitter();
   @Output() deleteClick: EventEmitter<void> = new EventEmitter();
 
-  constructor() {}
+  constructor(private notificationServive: NotificationService) {}
 
   onEditClick() {
     this.editClick.emit();
@@ -21,5 +22,7 @@ export class TodoCardComponent {
 
   onDeleteClick() {
     this.deleteClick.emit();
+
+    this.notificationServive.show('Todo deleted!');
   }
 }

@@ -3,6 +3,7 @@ import { Note } from '../../shared/note.model';
 import { NoteService } from '../../shared/note.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { NotificationService } from 'src/app/shared/notification.service';
 
 @Component({
   selector: 'app-edit-note',
@@ -14,7 +15,8 @@ export class EditNoteComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private noteService: NoteService,
-    private router: Router
+    private router: Router,
+    private notificationServive: NotificationService
   ) {}
   ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
@@ -33,10 +35,14 @@ export class EditNoteComponent implements OnInit {
   onFormSubmit(form: NgForm) {
     this.noteService.updateNote(this.note.id, form.value);
     this.router.navigateByUrl('/notes');
+
+    this.notificationServive.show('Note updated!');
   }
 
   deleteNote() {
     this.noteService.deleteNote(this.note.id);
     this.router.navigateByUrl('/notes');
+
+    this.notificationServive.show('Note deleted!');
   }
 }

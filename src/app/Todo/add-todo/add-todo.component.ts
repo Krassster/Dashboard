@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from 'src/app/shared/notification.service';
 import { Todo } from '../../shared/todo.model';
 import { TodoService } from '../../shared/todo.service';
 
@@ -11,7 +12,11 @@ import { TodoService } from '../../shared/todo.service';
 })
 export class AddTodoComponent {
   showValidationErrors: boolean;
-  constructor(private todoService: TodoService, private router: Router) {
+  constructor(
+    private todoService: TodoService,
+    private router: Router,
+    private notificationServive: NotificationService
+  ) {
     this.showValidationErrors = false;
   }
 
@@ -21,6 +26,8 @@ export class AddTodoComponent {
 
       this.todoService.addTodo(todo);
       this.router.navigateByUrl('/todos');
+
+      this.notificationServive.show('Todo created!');
     } else {
       this.showValidationErrors = true;
     }
