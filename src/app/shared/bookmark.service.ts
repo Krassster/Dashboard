@@ -1,11 +1,11 @@
 import { Bookmark } from './bookmarks.model';
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class BookmarkService {
+export class BookmarkService implements OnDestroy {
   bookmarks: Bookmark[] = [
     new Bookmark('Wikipedia', 'https://www.wikipedia.org'),
     new Bookmark('YouTube', 'https://www.youtube.com'),
